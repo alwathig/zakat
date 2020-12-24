@@ -66,7 +66,6 @@
 			</field>
 		</record>
 
-
 		<record id="person_calendar_view" model="ir.ui.view">
 			<field name="name">Person</field>
 			<field name="model">zakat.person</field>
@@ -78,6 +77,57 @@
 			</field>
 		</record>
 
+
+		<record id="person_form_view" model="ir.ui.view">
+			<field name="name">Person</field>
+			<field name="model">zakat.person</field>
+			<field name="arch" type="xml">
+				<form>
+
+                    <header>
+                        <button string="Confirm" class="btn btn-primary o_employee_chat_btn"/>
+                        <button string="Cancel" class="btn-primary"/>
+                    </header>
+
+
+					<sheet>
+						<field name="image" widget="image" class="oe_avatar" options="{&quot;zoom&quot;: true, &quot;preview_image&quot;:&quot;image&quot;}"/>
+						<group>
+							<group>
+								<field name="name"/>
+								<field name="national_no"/>
+								<field name="phone"/>
+								
+							</group>
+
+							<group>
+								<field name="gender"/>
+								<field name="is_deserve"/>
+								
+								<field name="birth_date"/>							
+							</group>
+						</group>
+
+						<notebook>
+							<page string="Address">
+								<field name="address"/>
+							</page>
+
+							<page string="Orders">
+								<field name="orders"/>
+							</page>
+
+							<page string="Other Info">
+								<group>
+									<field name="masrif_type"/>	
+									<field name="salary"/>
+								</group>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
 
 
 		<menuitem name="Zakat System" id="zakat_root_menu"/>

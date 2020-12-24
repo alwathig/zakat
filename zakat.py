@@ -24,6 +24,8 @@ class Order(models.Model):
 	description = fields.Html()
 	person = fields.Many2one("zakat.person")
 
+	_rec_name = "person"
+
 class MType(models.Model):
 	_name = "zakat.type"
 	name = fields.Char()
