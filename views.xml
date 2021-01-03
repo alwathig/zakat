@@ -1,82 +1,90 @@
 <odoo>
+
 	<data>
-		<record id="person_action_id" model="ir.actions.act_window">
-			<field name="name">Person</field>
-			<field name="res_model">zakat.person</field>
-			<field name="view_mode">tree,graph,pivot,calendar,form</field>
+
+		<record id="action_hr_employee" model="ir.actions.act_window">
+			<field name="name">Employess</field>
+			<field name="res_model">hr.employee</field>
+			<field name="view_mode">kanban,tree,form</field>
 		</record>
 
-		<record id="order_action_id" model="ir.actions.act_window">
-			<field name="name">Order</field>
-			<field name="res_model">zakat.order</field>
-			<field name="view_mode">tree,form</field>
-		</record>
+		 <record id="person_action_id" model="ir.actions.act_window">
+		 	<field name="name">Person</field>
+		 	<field name="res_model">zakat.person</field>
+		 	<field name="view_mode">kanban,tree,graph,pivot,calendar,form</field>
+		 </record>
 
-		<record id="masrif_action_id" model="ir.actions.act_window">
-			<field name="name">Masrif</field>
-			<field name="res_model">zakat.type</field>
-			<field name="view_mode">tree,form</field>
-		</record>
 
-		<record id="person_search_view" model="ir.ui.view">
-			<field name="name">Person</field>
-			<field name="model">zakat.person</field>
-			<field name="arch" type="xml">
-				<search>
-					<field name="name"/>
-					<field name="gender"/>
-					<field name="phone"/>
-				</search>	
-			</field>
-		</record>
+		 <record id="order_action_id" model="ir.actions.act_window">
+		 	<field name="name">Order</field>
+		 	<field name="res_model">zakat.oreder</field>
+		 	<field name="view_mode">tree,form</field>
+		 </record>
 
-		<record id="person_tree_view" model="ir.ui.view">
-			<field name="name">Person</field>
-			<field name="model">zakat.person</field>
-			<field name="arch" type="xml">
-				<tree>
-					<field name="name"/>
-					<field name="national_no"/>
-					<field name="phone"/>
-					<field name="gender"/>					
-					<field name="is_deserve"/>					
-				</tree>
-			</field>
-		</record>
+		 <record id="masrif_action_id" model="ir.actions.act_window">
+		 	<field name="name">masrif</field>
+		 	<field name="res_model">zakat.type</field>
+		 	<field name="view_mode">tree,form</field>
+		 </record>
 
-		<record id="person_graph_view" model="ir.ui.view">
-			<field name="name">Person</field>
-			<field name="model">zakat.person</field>
-			<field name="arch" type="xml">
-				<graph>
-					<field name="name"/>
-					<field name="salary" type="measure"/>
-				</graph>
-			</field>
-		</record>
+		 <record id="person_search_id" model="ir.ui.view">
+		 	<field name="name">person</field>
+		 	<field name="model">zakat.person</field>
+		 	<field name="arch" type="xml">
+		 		<search>
+		 			<field name="name"/>
+		 			<field name="gender"/>
+		 			<field name="phone"/>
+		 		</search>
+		 	</field>
+		 </record>
 
-		<record id="person_pivot_view" model="ir.ui.view">
-			<field name="name">Person</field>
-			<field name="model">zakat.person</field>
-			<field name="arch" type="xml">
-				<pivot>
-					<field name="name"/>
-					<field name="salary" type="measure"/>
-				</pivot>
-			</field>
-		</record>
+		 <record id="person_tree_id" model="ir.ui.view">
+		 	<field name="name">person</field>
+		 	<field name="model">zakat.person</field>
+		 	<field name="arch" type="xml">
+		 		<tree>
+		 			<field name="name"/>
+		 			<field name="national_no"/>
+		 			<field name="gender"/>
+		 			<field name="phone"/>
+		 			<field name="is_deserve"/>
+		 		</tree>
+		 	</field>
+		 </record>
 
-		<record id="person_calendar_view" model="ir.ui.view">
-			<field name="name">Person</field>
-			<field name="model">zakat.person</field>
-			<field name="arch" type="xml">
-				<calendar date_start="birth_date" color="name">
-					<field name="name"/>
-					<field name="salary"/>
-				</calendar>
-			</field>
-		</record>
+		 <record id="person_graph_id" model="ir.ui.view">
+		 	<field name="name">person</field>
+		 	<field name="model">zakat.person</field>
+		 	<field name="arch" type="xml">
+		 		<graph>
+		 			<field name="name"/>
+		 			<field name="salary" type="measure"/>
+		 		</graph>
+		 	</field>
+		 </record>
 
+		 <record id="person_pivot_id" model="ir.ui.view">
+		 	<field name="name">person</field>
+		 	<field name="model">zakat.person</field>
+		 	<field name="arch" type="xml">
+		 		<pivot>
+		 			<field name="name"/>
+		 			<field name="salary" type="measure"/>
+		 		</pivot>
+		 	</field>
+		 </record>
+
+		<record id="person_calendar_id" model="ir.ui.view">
+		 	<field name="name">person</field>
+		 	<field name="model">zakat.person</field>
+		 	<field name="arch" type="xml">
+		 		<calendar date_start="brith_date" color="name">
+		 			<field name="name"/>
+		 			<field name="salary"/>
+		 		</calendar>
+		 	</field>
+		 </record>
 
 		<record id="person_form_view" model="ir.ui.view">
 			<field name="name">Person</field>
@@ -85,8 +93,11 @@
 				<form>
 
                     <header>
-                        <button string="Confirm" class="btn btn-primary o_employee_chat_btn"/>
-                        <button string="Cancel" class="btn-primary"/>
+                    	<button string="Submit" name="submit" type="object" class="btn btn-default o_employee_chat_btn" attrs="{'invisible':[('state', '!=', 'draft')]}"/>
+                        <button string="Confirm" name="confirm" type="object" class="btn btn-primary o_employee_chat_btn" attrs="{'invisible':[('state', '!=', 'submit')]}"/>
+                        
+                        <button string="Cancel" class="btn-danger"/>
+                        <field name="state" widget="statusbar"/>
                     </header>
 
 
@@ -104,7 +115,7 @@
 								<field name="gender"/>
 								<field name="is_deserve"/>
 								
-								<field name="birth_date"/>							
+								<field name="brith_date"/>							
 							</group>
 						</group>
 
@@ -128,12 +139,76 @@
 				</form>
 			</field>
 		</record>
+		 <!-- Inheritance -->
+		 <record id="hr_employee_form_inherit_zakat" model="ir.ui.view">
+		 	<field name="name">hr.employee.form.inherit.zakat</field>
+		 	<field name="model">hr.employee</field>
+		 	<field name="inherit_id" ref="hr.view_employee_form"/>
+		 	<field name="arch" type="xml">
+		 		<!-- Field Way -->
+		 		<field name="parent_id" position="after">
+		 			<field name="desc"/>
+		 		</field>
+
+		 		<!-- Xpath Way -->
+		 		<xpath expr="//form/sheet/notebook/page[@name='personal_information']" position="attributes">
+		 			<attribute name="invisible">1</attribute>
+		 		</xpath>
+
+				<!-- Xpath Number Way -->
+		 		<!--<xpath expr="//form/sheet/notebook/page[2]" position="attributes">
+		 			<attribute name="invisible">1</attribute>
+		 		</xpath> -->
+		 	</field>
+		 </record>
 
 
-		<menuitem name="Zakat System" id="zakat_root_menu"/>
-		<menuitem name="Person" id="zakat_person_menu" parent="zakat_root_menu" action="person_action_id"/>
-		<menuitem name="Order" id="zakat_order_menu" parent="zakat_root_menu" action="order_action_id"/>
-		<menuitem name="Masrif" id="zakat_masrif_menu" parent="zakat_root_menu" action="masrif_action_id"/>
+		 <record id="zakat_person_kanban_id" model="ir.ui.view">
+		 	<field name="name">zakat_person.kanabn.view</field>
+		 	<field name="model">zakat.person</field>
+			 	<field name="arch" type="xml">
+				 <kanban class="o_hr_employee_kanban">
+				   <field name="id"/>
+				   <templates>
+				       <t t-name="kanban-box">
+				           <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_hr_kanban_record">
+				               <field name="image" widget="image" width="300px" class="o_kanban_image_fill_left o_hr_rounded_circle" options="{&quot;zoom&quot;: true, &quot;preview_image&quot;:&quot;image&quot;}"/>
 
+				                <div class="oe_kanban_details">
+				                   <div class="o_kanban_record_top">
+				                       <div class="o_kanban_record_headings">
+				                           <strong class="o_kanban_record_title">
+				                                
+
+				                                <field name="name" placeholder="Person's Name"/>
+				                           </strong>
+				                           
+				                       </div>
+				                   </div>
+				                   <field name="phone"/><br/>
+				                   <span style="color: red;">
+				                   	<field name="national_no"/>
+				                   </span><br/>
+				                   <field name="gender"/><br/>
+				                   <field name="address"/><br/>
+				                   <field name="salary" widget="time"/>
+				               </div>
+				           </div>
+				       </t>
+				   </templates>
+				</kanban>
+			</field>
+		</record>s
+
+
+
+		 <menuitem name="zakat system" id="zakat_root_menu"/>
+		 <menuitem name="Person" id="zakat_person_menu" parent="zakat_root_menu" action="person_action_id" />
+		 <menuitem name="Order" id="zakat_order_menu" parent="zakat_root_menu" action="order_action_id" />
+		 <menuitem name="masrif" id="zakat_msarf_menu" parent="zakat_root_menu" action="masrif_action_id" />
+
+		 <menuitem name="Employees" id="employee_zakat" parent="zakat_root_menu" action="action_hr_employee"/>
 	</data>
+
+
 </odoo>

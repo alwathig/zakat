@@ -1,13 +1,13 @@
 {
 	"name": "Zakat System",
-	"summary": "To manage Zakat ",
-	"description": """ Main activites """,
-	"sequence" : -99,
-	"website" : "firebits.net",
-	"author" : "Mohammed Alwathig",
-	"depends" : ["base"],
+	"summary": "To maner zakat",
+	"description" : """ Main acivites """,
+	"sequence": -99,
+	"website": "firbits.net",
+	"author":  "wddah",
+	"depends": ["base","hr"],
 	"category": "Zakat",
 	"application": False,
 	"auto_install": False,
-	"data": ["views.xml"],
+	"data": ["views.xml","person_report.xml"]
 }

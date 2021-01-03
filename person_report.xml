@@ -1,0 +1,27 @@
+<odoo>
+	<report 
+		id="person_report"
+		model="zakat.person"
+		name="zakat.person_report_temp"
+		string="Person Report"
+		report_type="qweb-pdf" />
+
+	<template id="person_report_temp">
+		<t t-call="web.html_container" >
+			<t t-call="web.external_layout">
+				<div class="page">
+					<t t-foreach="docs" t-as="person">
+						<h1 t-field="person.name"/>
+						<t t-foreach="person.masrif_type" t-as="type">
+							<h2 t-field="type.name"/>
+						</t>
+						<!-- <h1 t-field="person.phone"/>
+						<h1 t-field="person.national_no"/> -->
+					</t>
+				</div>
+			</t>
+		</t>
+	</template>
+
+
+</odoo>
