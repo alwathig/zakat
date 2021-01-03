@@ -1,1 +1,1 @@
-from . import zakat
+from . import models

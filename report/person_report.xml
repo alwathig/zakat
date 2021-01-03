@@ -4,7 +4,8 @@
 		model="zakat.person"
 		name="zakat.person_report_temp"
 		string="Person Report"
-		report_type="qweb-pdf" />
+		report_type="qweb-pdf"
+		groups="zakat_admin" />
 
 	<template id="person_report_temp">
 		<t t-call="web.html_container" >

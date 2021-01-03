@@ -1,0 +1,7 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+1,employee_access,model_zakat_person,zakat_employee,1,1,1,0
+2,admin_access,model_zakat_person,zakat_admin,1,0,0,0
+3,employee_access,model_zakat_oreder,zakat_employee,1,1,1,0
+4,admin_access,model_zakat_oreder,zakat_admin,1,0,0,0
+5,employee_access,model_zakat_type,zakat_employee,1,1,1,0
+6,admin_access,model_zakat_type,zakat_admin,1,0,0,0

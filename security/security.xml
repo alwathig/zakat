@@ -1,0 +1,37 @@
+<odoo>
+	<data>
+		<!-- Security Category -->
+		<record id="zakat_security_category" model="ir.module.category">
+			<field name="name">Zakat</field>
+			<field name="sequence">-10</field>
+		</record>
+
+
+		<!-- Security Groups -->
+		<record id="zakat_employee" model="res.groups">
+			<field name="name">Employee</field>
+			<field name="category_id" ref="zakat_security_category"/>
+		</record>
+
+		<record id="zakat_admin" model="res.groups">
+			<field name="name">Adminstrator</field>
+			<field name="implied_ids" eval="[(4,ref('zakat_employee'))]"/>
+			<field name="category_id" ref="zakat_security_category"/>
+		</record>
+
+		<record id="admin_show_persons" model="ir.rule">
+            <field name="name">Admin See Person</field>
+            <field name="model_id" ref="model_zakat_person"/>
+            <field name="groups" eval="[(4, ref('zakat_admin'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="domain_force">
+                [('state','=',"submit")]
+            </field>
+		</record>
+
+
+	</data>
+</odoo>

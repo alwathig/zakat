@@ -7,7 +7,13 @@
 	"author":  "wddah",
 	"depends": ["base","hr"],
 	"category": "Zakat",
-	"application": False,
+	"application": True,
 	"auto_install": False,
-	"data": ["views.xml","person_report.xml"]
+	"data": [
+		"views/views.xml",
+		"report/person_report.xml",
+		"security/security.xml",
+		"security/ir.model.access.csv",
+
+		]
 }
